@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ticket extends Model
+class Bus extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Ticket extends Model
      *
      * @var string
      */
-    protected $table = 'ticket';
+    protected $table = 'bus';
 
     /**
      * The primary key associated with the table.

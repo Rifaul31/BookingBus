@@ -14,7 +14,7 @@
         <div class="row justify-content-center" style="margin-top:13%">
             <div class="col-4">
                 <span class="float-left">{{ session('msg') }}</span>
-                    <a href="/ticket/create" class="btn btn-secondary float-right">Add</a><br /><br />
+                    <a href="/bus/create" class="btn btn-secondary float-right">Add</a><br /><br />
                         <table class="table table-bordered table-striped">
                             <tr>
                                 <th>Bus Code</th>
@@ -25,6 +25,8 @@
                                 <th>Departure Time</th>
                                 <th>Arrival Time</th>
                                 <th>Price</th>
+                                <th>Seats</th>
+                                <th>Available Seats</th>
                             </tr>
                             @foreach($list as $d)
                             <tr>
@@ -36,9 +38,11 @@
                                 <td>{{ $d->departure_time }}</td>
                                 <td>{{ $d->arrival_time }}</td>
                                 <td>{{ $d->price }}</td>
+                                <td>{{ $d->seats }}</td>
+                                <td>{{ $d->available_seats }}</td>
                                 <td>
-                                    <a href="/ticket/{{ $d->code }}/edit" class="btn btn-primary">Edit</a>
-                                    <form method="post" action="/ticket/{{ $d->code }}" style="display:inline" onsubmit="return confirm('Confirm Deletion?')">
+                                    <a href="/bus/{{ $d->code }}/edit" class="btn btn-primary">Edit</a>
+                                    <form method="post" action="/bus/{{ $d->code }}" style="display:inline" onsubmit="return confirm('Confirm Deletion?')">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger">Delete</button>

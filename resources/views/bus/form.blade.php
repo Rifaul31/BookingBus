@@ -49,6 +49,10 @@
         <label>Price</label>
         <input type="number" name="price" class="form-control" value="{{ isset($data)?$data->price:'' }}" />
         </div>
+        <div class="form-group">
+        <label>Seats</label>
+        <input type="number" name="seats" class="form-control" value="{{ isset($data)?$data->seats:'' }}" />
+        </div>
         <div style="text-align:center">
         <button class="btn btn-success">Save</button>
         </div>

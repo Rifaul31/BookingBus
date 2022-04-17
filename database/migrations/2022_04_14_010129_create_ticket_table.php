@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ticket', function (Blueprint $table) {
+        Schema::create('bus', function (Blueprint $table) {
             $table->string('code')->primary();
             $table->string('name');
             $table->string('depart_location');
@@ -22,6 +22,8 @@ return new class extends Migration
             $table->time('departure_time');
             $table->time('arrival_time');
             $table->integer('price');
+            $table->integer('seats');
+            $table->integer('available_seats');
             $table->timestamps();
         });
     }
